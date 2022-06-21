@@ -18,11 +18,11 @@ class Location(models.Model):
     
 class BookedSlot(models.Model):
     user_id = models.OneToOneField(User, on_delete=models.CASCADE,)
-    # slot_id = models.ForeignKey(ParkSlot, on_delete=models.CASCADE,)
+    slot_id = models.ForeignKey("ParkSlot", on_delete=models.CASCADE,)
 
 
 class ParkSlot(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
+    user = models.ForeignKey("Profile", on_delete=models.CASCADE, null=True)
     slot_name = models.CharField(max_length=50)
     image =models.ImageField(upload_to='parkslots/')
     booked =models.BooleanField(default =False)
