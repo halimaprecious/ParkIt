@@ -4,5 +4,5 @@ from django.conf.urls.static import static
 from django.urls import path
 
 urlpatterns=[
-    path('', views.park, name='bookspace'),
+    path('bookspace/', views.park, name='bookspace'),
 ]
