@@ -7,24 +7,14 @@ from django.db.models.signals import post_save
 
 # Create your models here.
 
-class Location(models.Model):
-    place = models.CharField(max_length=244)
-
-    def __str__(self):
-        return self.place
-
-    def save_location(self):
-        return self.save()
-    
-
 class BookedSlot(models.Model):
     user_id = models.OneToOneField(User, on_delete=models.CASCADE,)
-    slot_id = models.ForeignKey('ParkSlot', on_delete=models.CASCADE,)
+    slot_id = models.ForeignKey('ParkSlot', on_delete=models.CASCADE,related_name='+')
 
 
 
 class ParkSlot(models.Model):
-    user = models.ForeignKey('Profile', on_delete=models.CASCADE, null=True)
+    user = models.ForeignKey('Profile', on_delete=models.CASCADE, null=True ,related_name='+')
     slot_name = models.CharField(max_length=50)
     image =models.ImageField(upload_to='parkslots/')
     booked =models.BooleanField(default =False)
@@ -41,7 +31,6 @@ class Profile(models.Model):
     profile_pic = models.ImageField(upload_to='profiles/',null=True)
     phone_number =models.PositiveIntegerField()
     email =models.EmailField(max_length=100)
-    location =models.ForeignKey(Location, on_delete=models.CASCADE)
     car_plate =models.CharField(max_length=20)
     car_model =models.CharField(max_length=20)
     parking_slot =models.ForeignKey(ParkSlot,on_delete=models.CASCADE)

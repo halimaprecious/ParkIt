@@ -8,7 +8,6 @@
     margin:0;
     padding:0;
     box-sizing: border-box;
-    overflow-x: hidden;
 }
 #hero{
     background: url("/static/img/herocar.jpg");
@@ -75,10 +74,20 @@ h4:after{
     top: 50%;
     z-index: -2;
 }
-span{
-    background: #000;
-}
+/* span{
+    background: #fff;
+} */
 /* contact */
 .contact{
     height:450px;
+}
+.talk{
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    top: 30%;
+}
+.call{
+    font-size: 26px;
 }
