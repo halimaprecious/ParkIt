@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Irish+Grover&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap'); */
+/*  font-family: 'Irish Grover', cursive; */
+/* font-family: 'Roboto', sans-serif; */
+
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+#hero{
+    background: url("/static/img/herocar.jpg");
+    background-size: cover;
+}
+.menu {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 1.5rem;
+}
+
+.parkit {
+    font-family: 'Irish Grover', cursive;
+    font-size: 38px;
+    color: #ffff;
+    justify-self: center;
+    line-height: 0.8rem;
+}
+.parkit:hover{
+    color:#8D99AE ;
+}
+#park{
+    font-family: 'Irish Grover', cursive; 
+    color:#fff !important;
+    font-size: 36px;
+
+}
+#foot{
+    font-family: 'Irish Grover', cursive; 
+    color:#fff !important;
+}
+
+.login,
+.review,
+.about{
+    text-decoration: none;
+    color: #ffff;
+}
+/* lines */
+h4{
+margin: 100px auto;
+text-align: center;
+position:relative;
+}
+h4:before{
+    content: "";
+    display:block;
+    width: 40%;
+    height:1px;
+    background: #fff;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    z-index: -2;
+    }
+h4:after{
+    content: "";
+    display:block;
+    width: 40%;
+    height:1px;
+    background: #fff;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    z-index: -2;
+}
+span{
+    background: #000;
+}
+/* contact */
+.contact{
+    height:450px;
+}
