@@ -9,12 +9,12 @@ from django.db.models.signals import post_save
 
 class BookedSlot(models.Model):
     user_id = models.OneToOneField(User, on_delete=models.CASCADE,)
-    slot_id = models.ForeignKey('ParkSlot', on_delete=models.CASCADE,)
+    slot_id = models.ForeignKey('ParkSlot', on_delete=models.CASCADE,related_name='+')
 
 
 
 class ParkSlot(models.Model):
-    user = models.ForeignKey('Profile', on_delete=models.CASCADE, null=True)
+    user = models.ForeignKey('Profile', on_delete=models.CASCADE, null=True ,related_name='+')
     slot_name = models.CharField(max_length=50)
     image =models.ImageField(upload_to='parkslots/')
     booked =models.BooleanField(default =False)
