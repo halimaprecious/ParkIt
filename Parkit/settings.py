@@ -41,7 +41,7 @@ INSTALLED_APPS = [
 
     'parkapp',
     'crispy_forms',
-    'bootstrap4'
+
   
 ]
 
