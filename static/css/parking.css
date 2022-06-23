@@ -1,0 +1,76 @@
+*{
+  background-color: #0F1020;
+}
+.heading{
+  color:white;
+  font-size: 30px;
+  text-align: center;
+}
+.container {
+position: relative;
+width: 50%;
+}
+#carslot{
+  margin: 50px;
+  max-width: 500px;
+  max-height: 500px;
+  background-color: #0F1020;
+  border-style: solid;
+  border-color: beige;
+  padding: 100px;
+
+}
+.slots{
+  color: white;
+  text-align: center;
+}
+.image {
+width: 200px;
+height: 200px;
+height: auto;
+float: left;
+}
+
+.overlay {
+position: absolute;
+top: 0;
+bottom: 0;
+left: 0;
+right: 0;
+height: 100%;
+width: 100%;
+opacity: 0;
+transition: .5s ease;
+background-color: #cbc0d3;
+
+}
+
+.container:hover .overlay {
+opacity: 1;
+}
+
+.text {
+color: white;
+font-size: 20px;
+position: absolute;
+transition: 0.5s;
+
+top: 50%;
+left: 50%;
+-webkit-transform: translate(-50%, -50%);
+-ms-transform: translate(-50%, -50%);
+transform: translate(-50%, -50%);
+text-align: center;
+-webkit-background-clip: text;
+}
+.twos{
+  display: flex;
+  flex-direction: row;
+}
+img{
+  float: left;
+  object-fit: cover;
+}
+button{
+  position: absolute;
+}

@@ -12,3 +12,5 @@ def home(request):
 
 
 
+def park(request):
+    return render(request,'parking.html')
