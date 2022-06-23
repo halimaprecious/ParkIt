@@ -1,0 +1,30 @@
+{% extends 'registration/base.html' %}
+{% block content %}
+{%load bootstrap4%}
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+            <h1 class="parkit text-center">Parkit</h1>
+            <form action="/accounts/register/" method="post">
+                {% csrf_token %}
+                <fieldset class="form-group">
+                    <h5 class="border-bottom mt-4 text-center">Sign up to see available parking slots
+                    </h5>
+                    {% bootstrap_form form %}
+                </fieldset>
+                <div class="from-group text-center">
+                    <button class="btn btn-outline-secondary" type="submit">Sign Up</button>
+                </div>
+                <input type="hidden" name="text" value="{{next}}">
+            </form><br>
+            <div class="border-top pt-3 text-center">
+                <small class="text-muted">Already Have an Account?
+                    <a href="/accounts/login/">Log In</a>
+                </small>
+            </div>
+        </div>
+        <div class="col-md-4"></div>
+    </div>
+</div>
+{% endblock %}

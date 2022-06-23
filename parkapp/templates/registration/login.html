@@ -1,0 +1,31 @@
+{% extends 'registration/base.html' %}
+{%load bootstrap4%}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+        <div class="card"style="border:none; background-color:transparent;">
+            <h1 class="parkit text-center mb-5" >Parkit</h1>
+            <form action="/accounts/login/" method="post" class="sign">
+            {% csrf_token %}
+            <fieldset class="form-group">
+                {% bootstrap_form form %}
+            </fieldset>
+            <div class="from-group text-center">
+                <button class="btn btn-outline-secondary" type="submit">Log In</button>
+            </div>
+            <input type="hidden" name="text" value="{{next}}">
+            </form><br>
+        </div>
+            <div class="border-top pt-3 text-center">
+            <small class="text-muted">Don't Have an Account?
+                <a href="/accounts/register/">Sign Up</a>
+            </small>
+            </div>
+        </div>
+        <div class="col-md-4"></div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,32 @@
+{% load bootstrap4 %}
+{%load static%}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/parking.css' %}">
+{% bootstrap_css %}
+{% endblock %}
+
+<div class="container-fluid menu">
+  <a class="review" href="{%url 'home'%}">HOME</a>
+  <a class="review" href="{%url 'profile'%}">PROFILE</a>
+  <a class="review" href="{%url 'bookspace'%}">BOOKING</a>
+
+    <p class="text-white">Welcome {{ user.username }}</p>
+  <a class="review" href="/logout/">LOGOUT</a>
+
+  <style>
+    a:hover {
+      color: #8D99AE;
+    }
+    .container-fluid{
+      background-color: #8D99AE !important;
+      margin-top: 0;
+    }
+  </style>
+
+</div>
+
+{% block scripts %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+{% bootstrap_javascript %}
+{% endblock %} 
