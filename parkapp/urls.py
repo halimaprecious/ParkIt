@@ -18,6 +18,7 @@ urlpatterns =[
     path('bookspace/', views.park, name='bookspace'),
 
     path('bookslot/<slot_id>',views.booked_slot,name='bookslot'),
+    path('payment/', views.payment, name='payment'),
 ]
 if settings.DEBUG:
     urlpatterns+= static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
