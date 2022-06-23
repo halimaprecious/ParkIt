@@ -30,11 +30,12 @@
         </div>
     </div>
     <div class="row">
-        {% for hood in hoods %}
+        {% if request.user.profile.parkslot == parkslot %}
         <div class="col-md-4">
+            {% for parkslot in parkslot %}
             <h4>Hoods</h4>
-            <img src="{{hood.image.url}}" alt="Image" style="height:300px;width:300px;">
-            <p>{{hood.name}}</p>
+            <img src="{{parkslot.image.url}}" alt="Image" style="height:300px;width:300px;">
+            <p>{{parkslot.slot_name}}</p>
             <hr>
         </div>
         {% empty %}
@@ -43,6 +44,7 @@
         </div>
         {% endfor %}
     </div>
+    {% endif %}
 
     <!-- modal -->
     <div class="modal fade" id="profile" tabindex="-1" role="dialog" aria-labelledby="exampleModal3Label"

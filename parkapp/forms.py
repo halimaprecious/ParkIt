@@ -6,8 +6,10 @@ from django.contrib.auth.forms import UserCreationForm
 
 class BookSlotForm(forms.ModelForm):
     class Meta:
-        model = Profile
-        fields = ('phone_number','car_plate', 'car_model',)
+        model = Booking
+        fields = '__all__'
+       
+
 
 class ProfileUpdateForm(forms.ModelForm):
     class Meta:

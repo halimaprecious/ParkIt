@@ -14,7 +14,7 @@ urlpatterns =[
     path('api/v1/access/token', views.getAccessToken, name='get_mpesa_access_token'),
     path('api/v1/online/lipa', views.lipa_na_mpesa_online, name='lipa_na_mpesa'),
     path('bookspace/', views.park, name='bookspace'),
-    path('bookslot/<slot_id>',views.booked_slot,name='bookslot'),
+ 
 
 
     path('accounts/profile/', views.user_profiles, name='profile'),

@@ -13,12 +13,19 @@
                 {%csrf_token%}
 
                 {% bootstrap_form form%}
-                <input type="submit" class="btn default-color btn-lg btn-center" value="Post">
+                <input type="submit" class="btn default-color btn-lg btn-center" value="Pay">
                 <br><br>
             </form>
         </div>
         <br>
     </div>
 </div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+<script>
 
+$('#popup').on('click', function () {
+    return confirm('Thank you for choosing us! We have reserved your spot');
+});
+</script>
 {% endblock %}
+

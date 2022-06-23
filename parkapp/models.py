@@ -77,3 +77,13 @@ class Payment(models.Model):
     def delete_book(self):
         self.delete()
 
+class Booking(models.Model):
+    user = models.ForeignKey(Profile, on_delete=models.CASCADE)
+    car_plate=models.CharField(max_length=20)
+    car_model =models.CharField(max_length=20)
+
+    def save_book(self):
+        self.save()
+
+    def delete_book(self):
+        self.delete()

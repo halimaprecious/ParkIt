@@ -84,15 +84,11 @@ def book(request):
         if form.is_valid():
             form.save()
 
-        return redirect('bookspace')
+        return redirect('payment')
 
     return render(request, 'book.html', {'form':form})
 
-def booked_slot(request, slot_id):
-    slot = get_object_or_404(Parkslot, id=slot_id)
-    request.user.profile.slot = slot
-    request.user.profile.save()
-    return redirect('parking', slot_id = slot.id)
+
     
 
 def payment(request):
@@ -104,7 +100,7 @@ def payment(request):
             payment.user = current_user
             payment.save()
 
-        return redirect('profile')
+        return redirect('bookspace')
 
     else:
         form = paymentForm()

@@ -5,5 +5,6 @@ from .models import *
 admin.site.register(Profile)
 admin.site.register(Parkslot)
 admin.site.register(Payment)
+admin.site.register(Booking)
 
 
