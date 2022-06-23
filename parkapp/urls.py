@@ -21,6 +21,7 @@ urlpatterns =[
 
 
     path('accounts/profile/', views.user_profiles, name='profile'),
+    path('payment/', views.payment, name='payment'),
 ]
 if settings.DEBUG:
     urlpatterns+= static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

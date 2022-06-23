@@ -9,7 +9,8 @@ import requests
 from requests.auth import HTTPBasicAuth
 import json
 from .mpesa_credentials import MpesaAccessToken, LipanaMpesaPpassword
-
+from django.forms.models import model_to_dict
+from django.http import JsonResponse
 # Create your views here.
  
 
@@ -45,6 +46,8 @@ def getAccessToken(request):
 
 
 def lipa_na_mpesa_online(request):
+    # profile = Profile.objects.filter(user=request.user).first()
+    # phone_number = profile.phone_number
     access_token = MpesaAccessToken.validated_mpesa_access_token
     api_url = "https://sandbox.safaricom.co.ke/mpesa/stkpush/v1/processrequest"
     headers = {"Authorization": "Bearer %s" % access_token}
@@ -77,4 +80,19 @@ def booked_slot(request, slot_id):
     request.user.profile.save()
     return redirect('parking', slot_id = slot.id)
     
+
+def payment(request):
+    current_user = request.user
+    if request.method == 'POST':
+        form = paymentForm(request.POST, request.FILES)
+        if form.is_valid():
+            payment = form.save(commit=False)
+            payment.user = current_user
+            payment.save()
+
+        return redirect('profile')
+
+    else:
+        form = paymentForm()
+    return render(request, 'payment.html', {"form": form})
 

@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% load bootstrap4 %}
+
+
+{%block content%}
+<div style="background-color: black;">
+    <div class="container">
+        <h3 class="text-center" style="font-family: 'Kanit', sans-serif; color: white; padding-top:40px;">Pay To Reserve Your Slot</h3>
+        <div class="col-sm-12 col-lg-6 m-auto card">
+            <form action="{%url 'payment'%}" method="post" enctype="multipart/form-data">
+                <br>
+                {%csrf_token%}
+
+                {% bootstrap_form form%}
+                <input type="submit" class="btn default-color btn-lg btn-center" value="Post">
+                <br><br>
+            </form>
+        </div>
+        <br>
+    </div>
+</div>
+
+{% endblock %}
