@@ -16,16 +16,16 @@
   {% for parkslot in parkslots %}
         {% if forloop.first %}<div class="row ">{% endif %}
           <div class="container">
-            <p class="slots">Slot 1</p>
+            <p class="slots">{{parkslot.slot_name}}</p>
             <div class="card" id="carslot">
-            <img src="https://cdn.pixabay.com/photo/2016/09/06/13/37/maserati-gran-turismo-1649119__340.jpg" alt="Avatar" class="img-responsive">
+            <img src="{{parkslot.image.url}}" alt="Avatar" class="img-fluid">
             <div class="overlay">
-              <div class="text">Available</div>
-              <button class="btn btn-success">Book This Spot</button>
-            </div>
+              <a href="{% url 'detail'  %}" class="btn btn-dark">Book Now</a>
+     
+             </div>
             </div>
           </div>
-        {% if forloop.counter|divisibleby:2 %}
+        {% if forloop.counter|divisibleby:3 %}
         </div>
         <div class=row>{% endif %}
                 
@@ -33,6 +33,7 @@
         
         {% endfor %}
   
+
 </body>
 </html>
 {% endblock %}

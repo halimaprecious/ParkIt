@@ -32,18 +32,17 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'parkapp',
-    'bootstrap4',
+    
+    'parkapp.apps.ParkappConfig',
+    'rest_framework',
+    'crispy_forms',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
-    
-    'crispy_forms',
-
+    'bootstrap4',
   
 ]
 
@@ -88,10 +87,12 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'parkit',
-        'USER': 'ph',
+        'USER': 'moringa',
         'PASSWORD': 'gproject'
     }
 }
+
+
 
 
 # Password validation
@@ -118,7 +119,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Africa/Nairobi'
 
 USE_I18N = True
 
@@ -143,7 +144,6 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-
-
-
-
+LOGIN_REDIRECT_URL = 'bookspace'
+LOGIN_URL = 'login'
+LOGOUT_REDIRECT_URL = 'home'

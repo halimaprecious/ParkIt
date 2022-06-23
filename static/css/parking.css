@@ -10,14 +10,12 @@
 position: relative;
 width: 50%;
 }
+
 #carslot{
-  margin: 50px;
-  max-width: 500px;
-  max-height: 500px;
+  margin:50px;  
   background-color: #0F1020;
   border-style: solid;
   border-color: beige;
-  padding: 100px;
 
 }
 .slots{
@@ -54,7 +52,6 @@ color: white;
 font-size: 20px;
 position: absolute;
 transition: 0.5s;
-
 top: 50%;
 left: 50%;
 -webkit-transform: translate(-50%, -50%);
@@ -63,6 +60,7 @@ transform: translate(-50%, -50%);
 text-align: center;
 -webkit-background-clip: text;
 }
+
 .twos{
   display: flex;
   flex-direction: row;
@@ -70,7 +68,4 @@ text-align: center;
 img{
   float: left;
   object-fit: cover;
-}
-button{
-  position: absolute;
 }
