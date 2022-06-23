@@ -1,0 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{% static 'css/landing.css' %}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+        <title>ParkIt</title>
+    </head>
+    <body style=" background-color: #0F1020;">
+        <div class="container-fluid" style="background-image: url('https://images.pexels.com/photos/5199693/pexels-photo-5199693.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');  background-repeat: no-repeat; background-size: cover; background-position: center; height: 100vh;">
+            <div class="container menu">
+                <a class="login" href="">LOGIN | SIGN-UP</a>
+                <a href="/"><p class="parkit">ParkIt</p></a>  
+                <a class="about" href="">ABOUT US</a>
+                <a class="review" href="">REVIEWS</a>
+                <style>
+                    a:hover{
+                        color:#8D99AE ;
+                    }
+                </style>
+            </div>
+            <div class="intro" style="margin-top:20%;padding-left:100px;">
+                <h3 class="text-white">
+                Welcome to <br>
+                <p id="park">ParkIt</p>  Nairobi
+                </h3>
+                <small class="text-white">Book a parking space in available spots in Nairobi</small>
+            </div>  
+        </div> 
+
+
+        {% block content %}
+
+        {% endblock %}
+
+
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
+    </body>
+</html>
