@@ -14,3 +14,8 @@ class parkslotForm(forms.ModelForm):
     class Meta:
         model = Parkslot
         exclude = ['publish_date']
+
+class paymentForm(forms.ModelForm):
+    class Meta:
+        model= Payment
+        exclude = ('user',)
