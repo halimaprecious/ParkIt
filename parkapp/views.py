@@ -18,7 +18,6 @@ def home(request):
 
 
 
-<<<<<<< HEAD
 @login_required(login_url='/accounts/login/')
 def user_profiles(request):
     
@@ -64,7 +63,5 @@ def lipa_na_mpesa_online(request):
     }
     response = requests.post(api_url, json=request, headers=headers)
     return HttpResponse('success')
-=======
 def park(request):
     return render(request,'parking.html')
->>>>>>> MaureenGichuki-master
