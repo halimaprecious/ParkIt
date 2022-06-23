@@ -1,5 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Irish+Grover&display=swap');
 *{
-  background-color: #0F1020;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+body{
+  background-color: #0F1020 !important;
+  color:white;
+
 }
 .heading{
   color:white;
@@ -11,13 +20,11 @@ position: relative;
 width: 50%;
 }
 #carslot{
-  /* margin: 50px; */
   max-width: 500px;
   max-height: 500px;
   background-color: #0F1020;
   border-style: solid;
   border-color: beige;
-  /* padding: 100px; */
 
 }
 .slots{
@@ -74,3 +81,40 @@ img{
 button{
   position: absolute;
 }
+/* nav */
+.menu {
+  display: flex;
+  justify-content: space-around;
+  padding: 1.5rem;
+}
+.review{
+  text-decoration: none;
+  color: #ffff;
+}
+h4{
+  margin: 100px auto;
+  text-align: center;
+  position:relative;
+  }
+  h4:before{
+      content: "";
+      display:block;
+      width: 40%;
+      height:1px;
+      background: #fff;
+      position: absolute;
+      left: 0;
+      top: 50%;
+      z-index: -2;
+      }
+  h4:after{
+      content: "";
+      display:block;
+      width: 40%;
+      height:1px;
+      background: #fff;
+      position: absolute;
+      right: 0;
+      top: 50%;
+      z-index: -2;
+  }

@@ -18,7 +18,6 @@ def home(request):
     return render(request,'main/landingpage.html')
 
 
-
 @login_required(login_url='/accounts/login/')
 def user_profiles(request):
     

@@ -5,16 +5,16 @@
     <div class="row">
         <div class="col-md-4"></div>
         <div class="col-md-4">
-            <h1 class="text-center"style="">Parkit</h1>
+            <h1 class="parkit text-center">Parkit</h1>
             <form action="/accounts/register/" method="post">
                 {% csrf_token %}
                 <fieldset class="form-group">
-                    <legend class="border-bottom mb-4 text-center">Sign up to see available parking slots
-                    </legend>
+                    <h5 class="border-bottom mt-4 text-center">Sign up to see available parking slots
+                    </h5>
                     {% bootstrap_form form %}
                 </fieldset>
                 <div class="from-group text-center">
-                    <button class="btn btn-outline-info" type="submit">Sign Up</button>
+                    <button class="btn btn-outline-secondary" type="submit">Sign Up</button>
                 </div>
                 <input type="hidden" name="text" value="{{next}}">
             </form><br>
