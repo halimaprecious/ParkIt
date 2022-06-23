@@ -1,6 +1,13 @@
 from django import forms
 from .models import *
+from django.contrib.auth.models import User  
+from django.contrib.auth.forms import UserCreationForm  
 
+
+class BookSlotForm(forms.ModelForm):
+    class Meta:
+        model = Profile
+        fields = ('phone_number','car_plate', 'car_model',)
 
 class ProfileUpdateForm(forms.ModelForm):
     class Meta:

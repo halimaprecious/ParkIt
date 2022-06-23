@@ -20,12 +20,12 @@
             <div class="card" id="carslot">
             <img src="{{parkslot.image.url}}" alt="Avatar" class="img-fluid">
             <div class="overlay">
-              <div class="text">Available</div>
-              <button class="btn btn-success">Book This Spot</button>
-            </div>
+              <a href="{% url 'detail'  %}" class="btn btn-dark">Book Now</a>
+     
+             </div>
             </div>
           </div>
-        {% if forloop.counter|divisibleby:2 %}
+        {% if forloop.counter|divisibleby:3 %}
         </div>
         <div class=row>{% endif %}
                 
@@ -33,6 +33,7 @@
         
         {% endfor %}
   
+
 </body>
 </html>
 {% endblock %}

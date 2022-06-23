@@ -1,3 +1,9 @@
+from django.shortcuts import render,redirect
+from django.contrib.auth import login, authenticate
+
+from parkapp.forms import BookSlotForm
+from .models import *
+
 from .forms import *
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render,redirect,get_object_or_404
@@ -12,10 +18,11 @@ from .mpesa_credentials import MpesaAccessToken, LipanaMpesaPpassword
 from django.forms.models import model_to_dict
 from django.http import JsonResponse
 # Create your views here.
+def park(request):
+    return render(request,'parking.html')
  
 
 def home(request):
-
     return render(request,'main/landingpage.html')
 
 
@@ -34,7 +41,6 @@ def user_profiles(request):
     
     return render(request, 'registration/profile.html', {"form":form})
 
-#create your views here
 def getAccessToken(request):
     consumer_key ='UPaUKccind4sSEGwBZPCA7q4pAB5ZzIw'
     consumer_secret = 'MDkX4fbCL073PspR'
@@ -64,15 +70,23 @@ def lipa_na_mpesa_online(request):
         "AccountReference": "PARKIT",
         "TransactionDesc": "Testing stk push"
     }
-    response = requests.post(api_url, json=request, headers=headers)
-    return HttpResponse('success')
+  
     
 def park(request):
     parkslots =  Parkslot.objects.all()
     return render(request,'parking.html',{'parkslots':parkslots})
 
 
+def book(request):
+    form = BookSlotForm(request.POST)
+    if request.method == 'POST':
+        form = BookSlotForm(request.POST)
+        if form.is_valid():
+            form.save()
 
+        return redirect('bookspace')
+
+    return render(request, 'book.html', {'form':form})
 
 def booked_slot(request, slot_id):
     slot = get_object_or_404(Parkslot, id=slot_id)
