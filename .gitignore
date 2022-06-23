@@ -1,1 +1,3 @@
 vpark/
+db.sqlite3
+.env
