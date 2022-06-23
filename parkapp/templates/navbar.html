@@ -17,7 +17,6 @@
             </li>
         </ul>
 
-
         <ul class="navbar-nav ml-auto nav-flex-icons">
             {% if user.is_authenticated %}
             <li class="nav-item dropdown">
@@ -40,12 +39,9 @@
             {% else %}
             <ul class="navbar-nav ml-auto nav-flex-icons">
                 <li class="nav-item active">
-                    <a class="nav-link" href="{% url 'login' %}">Log In</a>
+                    <a class="nav-link" href="/accounts/register">Log In</a>
                 </li>
 
-                <li class="nav-item active">
-                    <a class="nav-link" href="{% url 'register' %}">Sign Up</a>
-                </li>
 
                 {% endif %}
             </ul>

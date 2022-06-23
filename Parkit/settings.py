@@ -87,9 +87,9 @@ WSGI_APPLICATION = 'Parkit.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'parkit',
-        'USER': 'ph',
-        'PASSWORD': 'gproject'
+        'NAME': 'park',
+        'USER': 'moringa',
+        'PASSWORD': 'Access'
     }
 }
 
@@ -138,13 +138,13 @@ STATICFILES_DIRS = (
 
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+# MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-LOGIN_REDIRECT_URL = 'home'
+LOGIN_REDIRECT_URL = 'bookspace'
 LOGIN_URL = 'login'
-LOGOUT_REDIRECT_URL = '/accounts/login/'
+LOGOUT_REDIRECT_URL = 'home'

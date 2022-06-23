@@ -1,14 +1,15 @@
-from django.shortcuts import render,redirect
 from .forms import *
-from django.contrib.auth import login, authenticate
-
 from django.contrib.auth.decorators import login_required
+from django.shortcuts import render,redirect,get_object_or_404
+from parkapp.models import Parkslot
 
+# mpesa 
 from django.http import HttpResponse
 import requests
 from requests.auth import HTTPBasicAuth
 import json
 from .mpesa_credentials import MpesaAccessToken, LipanaMpesaPpassword
+
 # Create your views here.
  
 
@@ -63,5 +64,18 @@ def lipa_na_mpesa_online(request):
     }
     response = requests.post(api_url, json=request, headers=headers)
     return HttpResponse('success')
+    
 def park(request):
-    return render(request,'parking.html')
+    parkslots =  Parkslot.objects.all()
+    return render(request,'parking.html',{'parkslots':parkslots})
+
+
+
+
+def booked_slot(request, slot_id):
+    slot = get_object_or_404(Parkslot, id=slot_id)
+    request.user.profile.slot = slot
+    request.user.profile.save()
+    return redirect('parking', slot_id = slot.id)
+    
+
