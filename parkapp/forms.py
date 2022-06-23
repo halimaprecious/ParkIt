@@ -2,8 +2,6 @@ from django import forms
 from .models import *
 
 
-
-
 class ProfileUpdateForm(forms.ModelForm):
     class Meta:
         model = Profile
@@ -11,3 +9,8 @@ class ProfileUpdateForm(forms.ModelForm):
         widgets = {
           'bio': forms.Textarea(attrs={'rows':2, 'cols':10,}),
         }
+
+class parkslotForm(forms.ModelForm):
+    class Meta:
+        model = Parkslot
+        exclude = ['publish_date']

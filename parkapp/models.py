@@ -16,6 +16,16 @@ class Profile(models.Model):
     email =models.EmailField(max_length=100)
     car_plate =models.CharField(max_length=20)
     car_model =models.CharField(max_length=20)
+  
+
+    @receiver(post_save, sender=User)
+    def create_profile(sender, instance, created, **kwargs):
+        if created:
+            Profile.objects.create(user=instance)
+        
+    @receiver(post_save, sender=User)
+    def save_profile(sender, instance, **kwargs):
+        instance.profile.save()
 
     def __str__(self):
         return f'{self.user.username} Profile'
@@ -25,10 +35,28 @@ class Profile(models.Model):
 
 
 
-class ParkSlot(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
+
+class Parkslot(models.Model):
+    user = models.ForeignKey( Profile, blank=True , null=True, on_delete=models.CASCADE)
     slot_name = models.CharField(max_length=50)
-    image =models.ImageField(upload_to='parkslots/')
+    image = models.ImageField(upload_to='parkslots/', default='media/images/default.jpeg')
+   
+
+    def create_parkslot(self):
+        self.save()
+        
+    def delete_parkslot(self):
+        self.delete()
+        
+    @classmethod
+    def find_parkslot(cls,id):
+        search = cls.objects.get(id = id)
+        return  search
     
+
     def __str__(self):
-        return self.slot_nam
+        return self.slot_name
+
+
+
+

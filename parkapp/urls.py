@@ -14,4 +14,6 @@ urlpatterns =[
     path('api/v1/online/lipa', views.lipa_na_mpesa_online, name='lipa_na_mpesa'),
 
     path('bookspace/', views.park, name='bookspace'),
+
+    path('bookslot/<slot_id>',views.booked_slot,name='bookslot'),
 ]
