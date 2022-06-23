@@ -34,8 +34,6 @@ class Profile(models.Model):
         self.save()
 
 
-
-
 class Parkslot(models.Model):
     user = models.ForeignKey( Profile, blank=True , null=True, on_delete=models.CASCADE)
     slot_name = models.CharField(max_length=50)
@@ -58,5 +56,14 @@ class Parkslot(models.Model):
         return self.slot_name
 
 
+class Bookings(models.Model):
 
+    park_slot = models.ForeignKey(Parkslot, on_delete=models.CASCADE)
+    phone_number = models.ForeignKey(Profile, on_delete=models.CASCADE)
+
+    def save_book(self):
+        self.save()
+
+    def delete_book(self):
+        self.delete()
 

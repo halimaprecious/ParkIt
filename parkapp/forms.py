@@ -5,13 +5,13 @@ from django.contrib.auth.forms import UserCreationForm
 
 class PayForSlotForm(forms.ModelForm):
     class Meta:
-        model = Profile
-        fields = ('phone_number', 'email', 'car_plate')
+        model = Bookings
+        fields = ('phone_number', 'park_slot',)
 
-class BookSlot(forms.ModelForm):
+class BookSlotForm(forms.ModelForm):
     class Meta:
-        model = Parkslot
-        exclude = ('image',)
+        model = Profile
+        fields = ('phone_number','car_plate', 'car_model',)
 
 class ProfileUpdateForm(forms.ModelForm):
     class Meta:
