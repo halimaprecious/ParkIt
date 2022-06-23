@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    {%extends 'park/base.html'%}
+    {% load bootstrap4 %}
+    {% block content %}
+    {% load static%}
+
+    {{block.super}}
+
+    {% block styles %}
+    {% bootstrap_css %}
+    <link rel="stylesheet" href="{% static 'css/hood.css' %}">
+    {% endblock %}
+
+
+
+
+
+
+
+    <!-- <div style="margin-top:5cm;justify-content: center;margin-left: 10cm;align-items: center;"> -->
+    {% for item in parkslots %}
+    <div style="display: flex;" class="modal-dialog " role="document"></div>
+    <!-- Button trigger modal -->
+
+    <div style="display: flex; justify-content: center;" type="" class="default" class="modal-dialog " role="document"
+        data-toggle="modal" data-target="#post-modal{{item.id}}">
+
+       
+
+        <img style="height: 50vh;width: 800px;;display: flex;justify-content: center;"
+
+            class="card-img-top img-fluid image" class="img-responsive" src="{{item.image.url}}">
+            
+    </div>
+
+  
+
+
+
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="post-modal{{item.id}}" tabindex="" role="dialog"
+        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+
+                <div class="modal-header">
+
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+
+
+                </div>
+
+                <div class="modal-body">
+
+                    <div class="container">
+                        <!-- <a class="lightbox" href="{{post_item.name}}" class="row"> -->
+                        <div class="col-md-6">
+
+                            <div style="display: flex;">
+                                <img class="card-img-top img-fluid image" class="img-responsive"
+                                    src="{{item.image.url}}">
+                            </div>
+
+                            <!-- <span class="description-heading">project name: {{item.name}}</span> -->
+                            <p> user:{{item.user}}</p>
+                            <p> slot_name:{{item.slot_name}}</p>
+
+                        
+
+
+
+                                    <div class="col-md-4">{% if request.user.profile.slot == slot %}
+                                        <a href="{% url 'myparking'  %}" class="btn btn-outline-danger btn-sm" id="popup">bookslot
+                                            {{slot.slot_name}}</a>
+                                        {% endif %}
+                                    </div>
+                            
+                           
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+
+
+        </div>
+    </div>
+    {%endfor%}
+    <!-- </div> -->
+
+
+    <!-- </div>
+        </div>
+    </div>
+     -->
+
+
+
+
+
+
+
+
+
+
+
+
+    <!--Some content up here-->
+    {% endblock %}
+    <!--End of the block content-->
+    {% block scripts %} {{block.super}}
+    <script type="text/javascript" src="{%static 'js/newsletter.js'%}"></script>
+    {% endblock %}
+
+
+
+
+
+
+
+</body>
+
+</html>
+
+
+

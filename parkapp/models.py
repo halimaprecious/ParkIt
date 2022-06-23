@@ -1,4 +1,5 @@
 
+import profile
 from django.db import models
 from django.contrib.auth.models import User
 
@@ -7,42 +8,16 @@ from django.db.models.signals import post_save
 
 # Create your models here.
 
-class Location(models.Model):
-    place = models.CharField(max_length=244)
 
-    def __str__(self):
-        return self.place
-
-    def save_location(self):
-        return self.save()
     
-class BookedSlot(models.Model):
-    user_id = models.OneToOneField(User, on_delete=models.CASCADE,)
-    slot_id = models.ForeignKey("ParkSlot", on_delete=models.CASCADE,)
-
-
-class ParkSlot(models.Model):
-    user = models.ForeignKey("Profile", on_delete=models.CASCADE, null=True)
-    slot_name = models.CharField(max_length=50)
-    image =models.ImageField(upload_to='parkslots/')
-    booked =models.BooleanField(default =False)
-    booked_slot =models.ForeignKey(BookedSlot, on_delete=models.CASCADE,)
-
-    def __str__(self):
-        return self.slot_name
-
-
-
 class Profile(models.Model):
     user = models.OneToOneField(User,on_delete=models.CASCADE)
     username =models.CharField(max_length=100)
     profile_pic = models.ImageField(upload_to='profiles/',null=True)
     phone_number =models.PositiveIntegerField()
-    email =models.EmailField(max_length=100)
-    location =models.ForeignKey(Location, on_delete=models.CASCADE)
-    car_plate =models.CharField(max_length=20)
-    car_model =models.CharField(max_length=20)
-    parking_slot =models.ForeignKey(ParkSlot,on_delete=models.CASCADE)
+    car_plate =models.CharField(max_length=20, null = True)
+    car_model =models.CharField(max_length=20, default = "car")
+    # parking_slot =models.ForeignKey('ParkSlot',on_delete=models.CASCADE,related_name='+',)
 
 
     @receiver(post_save, sender=User)
@@ -59,6 +34,36 @@ class Profile(models.Model):
 
     def save_profile(self):
         self.save()
+
+
+
+
+
+
+class Parkslot(models.Model):
+    user = models.ForeignKey( Profile, blank=True , null=True, on_delete=models.CASCADE)
+    slot_name = models.CharField(max_length=50)
+    image = models.ImageField(upload_to='images/', default='media/images/default.jpeg')
+    # booked =models.BooleanField(default =False)
+    # booked_slot =models.ForeignKey('BookedSlot', on_delete=models.CASCADE,related_name='+')
+
+
+    def create_parkslot(self):
+        self.save()
+        
+    def delete_parkslot(self):
+        self.delete()
+        
+    @classmethod
+    def find_parkslot(cls,id):
+        search = cls.objects.get(id = id)
+        return  search
+    
+
+ 
+
+    def __str__(self):
+        return self.slot_name
 
 
 
