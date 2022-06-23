@@ -1,1 +1,1 @@
-web: gunicorn parkit.wsgi
+web: gunicorn Parkit.wsgi
