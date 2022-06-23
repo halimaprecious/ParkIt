@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Irish+Grover&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+body{
+  background-color: #0F1020 !important;
+  color:white;
+
+}
+.heading{
+  color:white;
+  font-size: 30px;
+  text-align: center;
+}
+.container {
+position: relative;
+width: 50%;
+}
+
+#carslot{
+  margin:50px;  
+  background-color: #0F1020;
+  border-style: solid;
+  border-color: beige;
+
+}
+.slots{
+  color: white;
+  text-align: center;
+}
+.image {
+width: 200px;
+height: 200px;
+height: auto;
+float: left;
+}
+
+.overlay {
+position: absolute;
+top: 0;
+bottom: 0;
+left: 0;
+right: 0;
+height: 100%;
+width: 100%;
+opacity: 0;
+transition: .5s ease;
+background-color: #cbc0d3;
+
+}
+
+.container:hover .overlay {
+opacity: 1;
+}
+
+.text {
+color: white;
+font-size: 20px;
+position: absolute;
+transition: 0.5s;
+top: 50%;
+left: 50%;
+-webkit-transform: translate(-50%, -50%);
+-ms-transform: translate(-50%, -50%);
+transform: translate(-50%, -50%);
+text-align: center;
+-webkit-background-clip: text;
+}
+
+.twos{
+  display: flex;
+  flex-direction: row;
+}
+img{
+  float: left;
+  object-fit: cover;
+}
+button{
+  position: absolute;
+}
+/* nav */
+.menu {
+  display: flex;
+  justify-content: space-around;
+  padding: 1.5rem;
+}
+.review{
+  text-decoration: none;
+  color: #ffff;
+}
+h4{
+  margin: 100px auto;
+  text-align: center;
+  position:relative;
+  }
+  h4:before{
+      content: "";
+      display:block;
+      width: 40%;
+      height:1px;
+      background: #fff;
+      position: absolute;
+      left: 0;
+      top: 50%;
+      z-index: -2;
+      }
+  h4:after{
+      content: "";
+      display:block;
+      width: 40%;
+      height:1px;
+      background: #fff;
+      position: absolute;
+      right: 0;
+      top: 50%;
+      z-index: -2;
+  }

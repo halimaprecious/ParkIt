@@ -1,3 +1,7 @@
 vpark/
 db.sqlite3
 .env
+__pycache__/
+virtual/
+__pycache__/
+.vscode/

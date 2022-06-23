@@ -1,0 +1,108 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{ block styles}
+<link rel="stylesheet" href="{% static 'css/landing.css' %}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+{ endblock}
+
+{% block content %}
+<!-- About Section -->
+<br>
+<div class="container mt-3" id="about">
+    <div class="lines">
+        <h4 class="text-center text-white">ABOUT US</h4> 
+
+    </div>
+    <div class="row text-white mt-5">
+        <div class="col-md-4 mt-5">
+            <h5 class="">It can be difficult to find a spot among many cars in an open area. Drivers can use the ParkIt web application to designate vacant spaces, making it easier for them to locate empty spaces and park their cars. It also features a parking reservation option that allows drivers to pay and reserve a space in advance. </h5>
+        </div>
+        <div class="col-md-1"></div>
+        <div class="col-md-7">
+            <div class="card " style="width: 700px; height:50vh; border: none;">
+                <img src="{% static 'img/parking.jpg' %}" alt="">
+            </div>
+        </div>
+    </div>
+</div><br>
+<!-- Reviews Section -->
+<div class="container mt-5"id="reviews">
+    <div class="lines">
+      <div class="in">
+        <h4 class="text-center text-white">REVIEWS</h4> 
+      </div>
+    </div>
+  <div class="row mt-5">
+    <div class="col-md-4">
+        <div class="card " style="background-color: #8D99AE; border: none;padding: 15px;">
+            <div class="text-center">
+                <img class="rounded-circle" src="{% static 'img/girly.jpg' %}" alt="" width="50px" height="50px">
+                <p><b>Alright</b></p>
+                <i class="fa fa-star fa-2x" aria-hidden="true" style="color:#DBA53D !important;"></i>
+                <i class="fa fa-star fa-2x" aria-hidden="true" style="color:#DBA53D !important;"></i>
+                <i class="fa fa-star fa-2x" aria-hidden="true" style="color:#DBA53D !important;"></i>
+                <i class="fa fa-star fa-2x" aria-hidden="true" style="color:#DBA53D !important;"></i>
+                <i class="fa fa-star-o fa-2x" aria-hidden="true" style="color:#D9D9D9 !important"></i>
+            </div> <br>
+            <P><i class="fa fa-quote-left" aria-hidden="true"></i>Easy to book, easy to find and plenty of parking spaces within walking distance to departures. Secure car park and felt safe. Would definitely recommend. <i class="fa fa-quote-right" aria-hidden="true"></i></P>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card " style="background-color: #8D99AE; border: none; padding: 15px;">
+            <div class="text-center">
+            <img  class="rounded-circle" src="{% static 'img/guy.jpg' %}" alt="" width="50px" height="50px">
+            <p ><b>Human</b></p>
+            <i class="fa fa-star fa-2x" aria-hidden="true" style="color:#DBA53D !important;"></i>
+            <i class="fa fa-star fa-2x" aria-hidden="true" style="color:#DBA53D !important;"></i>
+            <i class="fa fa-star fa-2x" aria-hidden="true" style="color:#DBA53D !important;"></i>
+            <i class="fa fa-star fa-2x" aria-hidden="true" style="color:#DBA53D !important;"></i>
+            <i class="fa fa-star-o fa-2x" aria-hidden="true" style="color:#D9D9D9 !important"></i>
+            </div> <br>
+            <P><i class="fa fa-quote-left" aria-hidden="true"></i> Everything went very smoothly with the parking,plenty of parking spaces, secure car park and felt safe. Would definitely recommend<i class="fa fa-quote-right" aria-hidden="true"></i></P>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card" style="background-color: #8D99AE; border: none; padding: 15px;">
+            <div class="text-center">
+                <img class="rounded-circle" src="{% static 'img/guy2.jpg' %}" alt=""  width="50px" height="50px">
+                <p><b>Bright</b></p>
+                <i class="fa fa-star fa-2x" aria-hidden="true" style="color:#DBA53D !important;"></i>
+                <i class="fa fa-star fa-2x" aria-hidden="true" style="color:#DBA53D !important;"></i>
+                <i class="fa fa-star fa-2x" aria-hidden="true" style="color:#DBA53D !important;"></i>
+                <i class="fa fa-star fa-2x" aria-hidden="true" style="color:#DBA53D !important;"></i>
+                <i class="fa fa-star fa-2x" aria-hidden="true" style="color:#DBA53D !important;"></i>
+            </div>
+            <br>
+            <P><i class="fa fa-quote-left" aria-hidden="true"></i> Great location of car park,plenty of parking spaces. Will definately use again.Secure car park and felt safe. Would definitely recommend <i class="fa fa-quote-right" aria-hidden="true"></i></P>
+        </div>
+    </div>
+  </div>  
+</div>
+<br>
+<!-- Contact Section -->
+<div class="container mt-5 text-white" id="contacts">
+    <div class="lines">
+        <h4 >LETS TALK</h4> 
+</div>
+</div>
+<div class="container contact mt-3 text-white" style="background-image: url('https://images.pexels.com/photos/235298/pexels-photo-235298.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'); background-repeat: no-repeat; background-size: cover; background-position: center;">
+    <div class="row talk">
+      <h6 class="call">CONTACT US ON:<br> <br>
+        Email: parkit@reallygreatsite.com <br>
+        Call: 0700010000
+      </h6>
+    </div>
+</div>
+<br>
+<!-- footer -->
+<div class="container mt-5">
+<footer style="background-color: #8D99AE;">
+    <div class="footer-copyright text-center py-3">© 2022 Copyright:
+        <span id="foot">ParkIt</span>
+      </div>
+</footer>
+</div>
+<br>
+
+{% endblock %}
