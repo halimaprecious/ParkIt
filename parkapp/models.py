@@ -39,7 +39,7 @@ class Profile(models.Model):
 class Parkslot(models.Model):
     user = models.ForeignKey( Profile, blank=True , null=True, on_delete=models.CASCADE)
     slot_name = models.CharField(max_length=50)
-    image = models.ImageField(upload_to='parkslots/', default='media/images/default.jpeg')
+    image = models.ImageField(upload_to='images/', default='default.jpeg')
    
 
     def create_parkslot(self):

@@ -11,13 +11,13 @@ position: relative;
 width: 50%;
 }
 #carslot{
-  margin: 50px;
+  /* margin: 50px; */
   max-width: 500px;
   max-height: 500px;
   background-color: #0F1020;
   border-style: solid;
   border-color: beige;
-  padding: 100px;
+  /* padding: 100px; */
 
 }
 .slots{
