@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 from django.contrib.auth import views as auth_views
 from . import views
@@ -13,4 +14,13 @@ urlpatterns =[
     path('api/v1/access/token', views.getAccessToken, name='get_mpesa_access_token'),
     path('api/v1/online/lipa', views.lipa_na_mpesa_online, name='lipa_na_mpesa'),
 
+=======
+from django.urls import re_path,path
+from . import views
+
+urlpatterns =[
+    re_path('',views.home, name='home'),
+
+    path('bookspace/', views.park, name='bookspace'),
+>>>>>>> MaureenGichuki-master
 ]

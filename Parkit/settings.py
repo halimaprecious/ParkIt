@@ -32,10 +32,15 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+<<<<<<< HEAD
     
     'parkapp.apps.ParkappConfig',
     'rest_framework',
     'crispy_forms',
+=======
+    'parkapp',
+    'bootstrap4',
+>>>>>>> MaureenGichuki-master
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -43,7 +48,13 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+<<<<<<< HEAD
     'bootstrap4',
+=======
+    
+    'crispy_forms',
+
+>>>>>>> MaureenGichuki-master
   
 ]
 
@@ -131,7 +142,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
 STATIC_URL = 'static/'
-
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
@@ -145,6 +156,13 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+<<<<<<< HEAD
 LOGIN_REDIRECT_URL = 'home'
 LOGIN_URL = 'login'
 LOGOUT_REDIRECT_URL = '/accounts/login/'
+=======
+
+
+
+
+>>>>>>> MaureenGichuki-master
